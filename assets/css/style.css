@@ -1,0 +1,169 @@
+
+/* =======================================
+   GLOBAL VARIABLES & RESET
+======================================= */
+:root {
+  --card-bg: #1e293b;
+  --accent-color: #a78bfa;
+  --text-muted: #94a3b8;
+  --text-color: #cbd5e1;
+  --primary-color: #4f46e5;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode {
+  --card-bg: #ffffff;
+  --text-color: #1f2937;
+  --text-muted: #6b7280;
+  --primary-color: #4f46e5;
+}
+
+/* Base Typography */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  transition: background 0.3s ease;
+}
+
+/* =======================================
+   NAVBAR
+======================================= */
+.navbar {
+  background: var(--card-bg);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: background 0.2s;
+  background: #334155;
+}
+
+.navbar li a:hover {
+  background: #475569;
+}
+
+/* =======================================
+   FLOATING ACTION BUTTONS
+======================================= */
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+}
+
+.floating-buttons button,
+.floating-buttons a {
+  background: #334155;
+  border: none;
+  color: #f1f5f9;
+  padding: 12px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.floating-buttons button:hover,
+.floating-buttons a:hover {
+  transform: scale(1.1);
+}
+
+/* Social Popup */
+.social-popup {
+  position: fixed;
+  top: 30%;
+  right: 80px;
+  background: var(--card-bg);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 150;
+}
+
+.social-popup a {
+  color: var(--text-color);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-popup.hidden {
+  display: none;
+}
+
+/* =======================================
+   FOOTER
+======================================= */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background-color: var(--card-bg);
+  margin-top: 50px;
+  color: var(--text-muted);
+}
+
+/* Navbar animation styles */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: top 0.3s ease-in-out;
+}
+
+.navbar-hidden {
+  top: -100px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .floating-buttons {
+    top: 30%;
+    right: 10px;
+  }
+
+  .navbar a {
+    margin: 4px 6px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Make the body a flex container to push footer to bottom */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content will grow and take up all available space */
+main {
+  flex: 1;
+}
