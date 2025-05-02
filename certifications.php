@@ -2,61 +2,59 @@
 require_once 'includes/db.php';
 require_once 'includes/header.php';
 
-// Fetch all certifications ordered by issue_date
+// Fetch certifications from DB
 $stmt = $pdo->query("SELECT * FROM certifications ORDER BY issue_date DESC");
 $certifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<section class="education-section">
-  <h2 class="section-title">Certifications & Credentials</h2>
+<section class="cert-section">
+  <h2 class="section-title">Certifications</h2>
   <div class="section-underline"></div>
 
-  <div class="education-cards">
+  <div class="cert-cards">
     <?php foreach ($certifications as $cert): ?>
-      <div class="education-card">
-        <div class="edu-header">
-          <!-- Placeholder icon or logo -->
-          <div class="edu-logo">
-            <i class="fas fa-certificate fa-2x" style="color: var(--primary-color); margin-top: 10px;"></i>
+      <div class="cert-card">
+        <!-- Card Header -->
+        <div class="cert-header">
+          <!-- Icon -->
+          <div class="cert-logo">
+            <i class="fas fa-graduation-cap"></i>
           </div>
 
-          <div class="edu-info">
-            <!-- Certificate Title -->
-            <h3 class="edu-institution"><?= htmlspecialchars($cert['title']) ?></h3>
+          <!-- Info -->
+          <div class="cert-info">
+            <h3 class="cert-title"><?= htmlspecialchars($cert['title']) ?></h3>
+            <p class="cert-issuer"><?= htmlspecialchars($cert['issuer']) ?></p>
 
-            <!-- Issuer -->
-            <p class="edu-degree"><?= htmlspecialchars($cert['issuer']) ?></p>
-
-            <!-- Optional details -->
-            <?php if (!empty($cert['details'])): ?>
-              <p class="edu-details"><?= htmlspecialchars($cert['details']) ?></p>
-            <?php endif; ?>
-
-            <!-- Issue Date and Credential URL -->
-            <div class="edu-meta">
+            <div class="cert-meta">
               <span><i class="fas fa-calendar-alt"></i> <?= date('F Y', strtotime($cert['issue_date'])) ?></span>
-              <?php if (!empty($cert['credential_url'])): ?>
-                <span>
-                  <i class="fas fa-external-link-alt"></i>
-                  <a href="<?= htmlspecialchars($cert['credential_url']) ?>" target="_blank">View Credential</a>
-                </span>
-              <?php endif; ?>
+              <?php if (!empty($cert['skills'])): ?>
+  <div class="cert-skills">
+    <?php foreach (explode(',', $cert['skills']) as $skill): ?>
+      <span class="skill-badge"><?= htmlspecialchars(trim($skill)) ?></span>
+    <?php endforeach; ?>
+  </div>
+<?php endif; ?>
+
             </div>
           </div>
 
-          <!-- Expand/Collapse Button -->
-          <button class="expand-btn"><i class="fas fa-chevron-down"></i></button>
+          <!-- Expand Button -->
+          <button class="expand-btn" aria-label="Toggle More Info">
+            <i class="fas fa-chevron-down"></i>
+          </button>
         </div>
 
-        <!-- Expandable Skills Section -->
-        <div class="edu-expanded">
-          <?php if (!empty($cert['skills'])): ?>
-            <h4>Skills Acquired</h4>
-            <div class="badge-container">
-              <?php foreach (explode(',', $cert['skills']) as $skill): ?>
-                <span class="badge"><?= htmlspecialchars(trim($skill)) ?></span>
-              <?php endforeach; ?>
-            </div>
+        <!-- Expandable Body -->
+        <div class="cert-expanded">
+          <?php if (!empty($cert['details'])): ?>
+            <p class="cert-details"><?= nl2br(htmlspecialchars($cert['details'])) ?></p>
+          <?php endif; ?>
+
+          <?php if (!empty($cert['credential_url'])): ?>
+            <a href="<?= htmlspecialchars($cert['credential_url']) ?>" target="_blank" class="cert-link">
+              <i class="fas fa-external-link-alt"></i> View Credential
+            </a>
           <?php endif; ?>
         </div>
       </div>
@@ -66,6 +64,6 @@ $certifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php require_once 'includes/footer.php'; ?>
 
-<!-- Styles & Scripts -->
-<link rel="stylesheet" href="assets/css/education.css"> <!-- You can reuse the same CSS -->
-<script defer src="assets/js/education.js"></script>
+<!-- CSS + JS -->
+<link rel="stylesheet" href="assets/css/certifications.css">
+<script defer src="assets/js/certifications.js"></script>

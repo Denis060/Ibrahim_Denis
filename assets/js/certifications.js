@@ -1,26 +1,16 @@
-// education.js
+// assets/js/certifications.js
 
-// Wait for DOM to be ready
-document.addEventListener('DOMContentLoaded', function () {
-  // Select all expand buttons
-  const expandButtons = document.querySelectorAll('.expand-btn');
+document.addEventListener('DOMContentLoaded', () => {
+  const expandBtns = document.querySelectorAll('.expand-btn');
 
-  expandButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const card = this.closest('.education-card');
-
-      // Toggle the expanded class
+  expandBtns.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.cert-card');
       card.classList.toggle('expanded');
 
-      // Optional: toggle icon direction (up/down)
-      const icon = this.querySelector('i');
-      if (icon.classList.contains('fa-chevron-down')) {
-        icon.classList.remove('fa-chevron-down');
-        icon.classList.add('fa-chevron-up');
-      } else {
-        icon.classList.remove('fa-chevron-up');
-        icon.classList.add('fa-chevron-down');
-      }
+      const icon = button.querySelector('i');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
     });
   });
 });
