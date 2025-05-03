@@ -12,11 +12,11 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/experience.css">
+  <link rel="stylesheet" href="assets/css/certifications.css">
   <link rel="stylesheet" href="assets/css/about.css">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/projects.css">
   <link rel="stylesheet" href="assets/css/education.css">
-  <link rel="stylesheet" href="assets/css/certifications.css">
   <link rel="stylesheet" href="assets/css/expertise.css">
   <link rel="stylesheet" href="assets/css/recognition.css">
   <link rel="stylesheet" href="assets/css/scrollbar.css">
