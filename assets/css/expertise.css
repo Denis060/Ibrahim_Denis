@@ -1,0 +1,219 @@
+/* Core layout */
+.expertise-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #88c0ff;
+  }
+  
+  .section-underline {
+    width: 60px;
+    height: 4px;
+    background-color: #88c0ff;
+    margin: 0 auto 30px;
+    border-radius: 2px;
+  }
+  
+  /* Search input */
+  .expertise-search {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  #expertiseSearchInput {
+    padding: 12px 16px;
+    width: 100%;
+    max-width: 500px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #1d1f2b;
+    color: #f4f4f4;
+  }
+  
+  /* Card container */
+  .expertise-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Card style */
+  .expertise-card {
+    background-color: #1e1e2f;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .expertise-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Header layout (icon, title/subtitle, button) */
+  .expertise-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .expertise-icon {
+    font-size: 1.6rem;
+    background-color: var(--primary, #5b6cff);
+    padding: 0.9rem;
+    border-radius: 0.8rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    min-height: 56px;
+  }
+  
+  .expertise-info {
+    flex: 1;
+  }
+  
+  .expertise-title {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .expertise-summary {
+    font-size: 0.95rem;
+    color: #cccccc;
+    margin-top: 6px;
+  }
+  
+  .expand-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #aaa;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-left: auto;
+  }
+  
+  /* Expanded section */
+  .expertise-expanded {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+    margin-top: 20px;
+  }
+  
+  .expertise-expanded.open {
+    max-height: 1000px;
+    opacity: 1;
+  }
+  
+  /* Expanded content styles */
+  .section-block {
+    margin-bottom: 20px;
+  }
+  
+  .section-block h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #58a6ff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .feature-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .feature-list li {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c4f5d2;
+  }
+  
+  .impact-box {
+    background: #2a2f4d;
+    padding: 1rem;
+    border-radius: 12px;
+    color: #e0e7ff;
+  }
+  
+  :root {
+    --primary: #4f7cff; /* adjust if your site uses a different primary */
+    --deep-bg: #0f172a; /* your actual deep navy background */
+    --card-bg: #1e293b; /* match your cards */
+    --text-light: #f1f5f9;
+    --text-muted: #94a3b8;
+  }
+  
+  /* Main card style */
+  .expertise-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Icon left, info right */
+  .expertise-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Icon */
+  .expertise-icon {
+    font-size: 1.6rem;
+    background-color: var(--primary);
+    padding: 0.9rem;
+    border-radius: 0.8rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    min-height: 56px;
+  }
+  
+  /* Title + subtitle */
+  .expertise-info {
+    flex: 1;
+  }
+  
+  .expertise-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-light);
+    margin: 0;
+  }
+  
+  .expertise-summary {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+  
+  /* Expand Button */
+  .expand-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #aaa;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
