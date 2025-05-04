@@ -40,7 +40,7 @@ $certifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </div>
 
           <!-- Expand Button -->
-          <button class="expand-btn" aria-label="Toggle More Info">
+          <button class="expand-btn" title="Expand" aria-label="Toggle More Info">
             <i class="fas fa-chevron-down"></i>
           </button>
         </div>

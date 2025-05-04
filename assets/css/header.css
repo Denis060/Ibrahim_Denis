@@ -1,0 +1,135 @@
+
+/* header.css */
+
+/* General */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--background);
+  padding: 12px 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background-color 0.3s ease;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  background: var(--card-bg);
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+/* Floating Buttons */
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.floating-buttons button,
+.floating-buttons a {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.floating-buttons button:hover,
+.floating-buttons a:hover {
+  transform: scale(1.1);
+  background-color: var(--primary-dark);
+}
+
+/* Social Popup */
+.social-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: var(--card-bg);
+  padding: 10px 15px;
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.social-popup.hidden {
+  display: none;
+}
+
+.social-popup a {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.social-popup a:hover {
+  color: var(--primary-color);
+}
+
+/* Light Theme Overrides */
+body.light-theme .navbar {
+  background-color: #ffffff;
+}
+
+body.light-theme .nav-links li a {
+  background-color: #f2f4f8;
+  color: #1a1a1a;
+}
+
+body.light-theme .nav-links li a:hover {
+  background-color: #e2e6ec;
+  color: #111;
+}
+
+body.light-theme .floating-buttons button,
+body.light-theme .floating-buttons a {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+body.light-theme .social-popup {
+  background-color: #ffffff;
+}
+
+body.light-theme .social-popup a {
+  color: #1a1a1a;
+}

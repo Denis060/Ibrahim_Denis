@@ -53,8 +53,8 @@
 
   <!-- Social Media Popup -->
   <div class="social-popup hidden">
-    <a href="https://linkedin.com/in/ibrahimfofanah" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://twitter.com/ibrahimfofanah" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://facebook.com/ibrahimfofanah" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="mailto:ibrahim@example.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/ibrahim-denis-fofanahnah-3a38261ab/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://x.com/fofanah_denis" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.facebook.com/AIHustleWithDenis/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="mailto:ibrahimdenisfofanah060@gmail.com"><i class="fas fa-envelope"></i></a>
   </div>

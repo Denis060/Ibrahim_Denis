@@ -1,16 +1,21 @@
-// assets/js/certifications.js
+// certifications.js
 
-document.addEventListener('DOMContentLoaded', () => {
-  const expandBtns = document.querySelectorAll('.expand-btn');
+document.addEventListener("DOMContentLoaded", function () {
+  const expandButtons = document.querySelectorAll(".expand-btn");
 
-  expandBtns.forEach(button => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.cert-card');
-      card.classList.toggle('expanded');
+  expandButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const card = this.closest(".cert-card");
+      const expandedSection = card.querySelector(".cert-expanded");
 
-      const icon = button.querySelector('i');
-      icon.classList.toggle('fa-chevron-down');
-      icon.classList.toggle('fa-chevron-up');
+      // Toggle expanded class
+      card.classList.toggle("expanded");
+      expandedSection.classList.toggle("open");
+
+      // Swap chevron icon
+      const icon = this.querySelector("i");
+      icon.classList.toggle("fa-chevron-down");
+      icon.classList.toggle("fa-chevron-up");
     });
   });
 });

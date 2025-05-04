@@ -1,0 +1,33 @@
+/* footer.css */
+
+.footer {
+    background-color: var(--background);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .footer .footer-links {
+    margin-bottom: 15px;
+  }
+  
+  .footer .footer-links a {
+    margin: 0 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .footer-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .footer .copyright {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  

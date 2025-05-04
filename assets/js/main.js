@@ -1,39 +1,50 @@
-// Theme Toggle
-const toggleBtn = document.querySelector('.theme-toggle');
-const body = document.body;
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggleBtn = document.querySelector(".theme-toggle");
+  const socialToggleBtn = document.querySelector(".social-toggle");
+  const socialPopup = document.querySelector(".social-popup");
 
-toggleBtn?.addEventListener('click', () => {
-  body.classList.toggle('light-theme');
-});
+  // ================================
+  // 1. Dark / Light Mode Toggle
+  // ================================
+  themeToggleBtn.addEventListener("click", () => {
+    const body = document.body;
+    const isLight = body.classList.contains("light-mode");
+    body.classList.toggle("light-mode");
+    body.classList.toggle("dark-mode");
 
-// Social Popup Toggle
-const socialToggle = document.querySelector('.social-toggle');
-const popup = document.querySelector('.social-popup');
+    // Save preference in cookie
+    document.cookie = `theme=${isLight ? "dark" : "light"}; path=/; max-age=31536000`;
+  });
 
-socialToggle?.addEventListener('click', () => {
-  popup?.classList.toggle('hidden');
-});
+  // ================================
+  // 2. Toggle Social Popup
+  // ================================
+  socialToggleBtn.addEventListener("click", () => {
+    socialPopup.classList.toggle("hidden");
+  });
 
-// Optional: Close popup when clicking outside
-window.addEventListener('click', function (e) {
-  if (popup && !popup.contains(e.target) && !socialToggle.contains(e.target)) {
-    popup.classList.add('hidden');
-  }
-});
+  // ================================
+  // 3. Keyboard Shortcut (Ctrl + K)
+  // ================================
+  document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      socialPopup.classList.toggle("hidden");
+    }
+  });
 
-let lastScrollTop = 0;
-const navbar = document.getElementById("navbar");
+  // ================================
+  // 4. Sticky Navbar Show/Hide on Scroll
+  // ================================
+  let lastScrollY = window.scrollY;
+  const navbar = document.getElementById("navbar");
 
-window.addEventListener("scroll", function () {
-  let scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop) {
-    // scrolling down
-    navbar.classList.add("navbar-hidden");
-  } else {
-    // scrolling up
-    navbar.classList.remove("navbar-hidden");
-  }
-
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY) {
+      navbar.classList.add("navbar-hidden");
+    } else {
+      navbar.classList.remove("navbar-hidden");
+    }
+    lastScrollY = window.scrollY;
+  });
 });

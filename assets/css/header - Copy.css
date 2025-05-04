@@ -1,0 +1,96 @@
+/* header.css */
+
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Sticky Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: var(--background);
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: background 0.3s ease;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Floating Buttons */
+  .floating-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+  }
+  
+  .floating-buttons button,
+  .floating-buttons a {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .floating-buttons button:hover,
+  .floating-buttons a:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Social Popup */
+  .social-popup {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: var(--card-bg);
+    padding: 10px 15px;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  }
+  
+  .social-popup.hidden {
+    display: none;
+  }
+  
+  .social-popup a {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+  }
+  
+  .social-popup a:hover {
+    color: var(--primary-color);
+  }
+  
